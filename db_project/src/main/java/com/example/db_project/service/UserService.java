@@ -24,12 +24,12 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public UserEntity getUser(Long id) throws UserNotFoundException {
-        UserEntity user = userRepo.findById(id).get();
-        if (user == null){
+    public User getUser(Long id) throws UserNotFoundException {
+        UserEntity userEntity = userRepo.findById(id).get();
+        if (userEntity == null){
             throw new UserNotFoundException("Такого користувача не найдено");
         }
-        return user;
+        return User.toModel(userEntity);
     }
 
     public Long deleteUser(Long id) throws UserNotFoundException {
