@@ -4,6 +4,7 @@ import com.example.db_project.entity.UserEntity;
 import com.example.db_project.exception.EmailAlreadyExistException;
 import com.example.db_project.exception.NicknameAlreadyExistException;
 import com.example.db_project.exception.UserNotFoundException;
+import com.example.db_project.model.User;
 import com.example.db_project.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,11 +22,6 @@ public class UserService {
             throw new NicknameAlreadyExistException("Користувач з таким нікнеймом вже існує");
         }
         return userRepo.save(user);
-    }
-
-    public Iterable<UserEntity> getUsers() {
-        Iterable<UserEntity> userEntities = userRepo.findAll();
-        return userEntities;
     }
 
     public UserEntity getUser(Long id) throws UserNotFoundException {
