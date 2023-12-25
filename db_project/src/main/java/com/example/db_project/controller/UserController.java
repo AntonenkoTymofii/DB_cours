@@ -51,7 +51,7 @@ public class UserController {
     }
 
     @PutMapping
-    public ResponseEntity updateSurvey(@RequestParam Long id,
+    public ResponseEntity updateUser(@RequestParam Long id,
                                        @RequestBody UserEntity user){
         try {
             userService.updateUser(id, user);
