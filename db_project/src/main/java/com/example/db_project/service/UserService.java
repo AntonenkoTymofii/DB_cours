@@ -39,7 +39,7 @@ public class UserService {
         userRepo.deleteById(id);
         return id;
     }
-    public UserEntity updateSurvey(Long id, UserEntity user)
+    public UserEntity updateUser(Long id, UserEntity user)
             throws EmailAlreadyExistException, NicknameAlreadyExistException,
             UserNotFoundException {
         UserEntity userEntity = userRepo.findById(id).get();
