@@ -54,7 +54,7 @@ public class UserController {
     public ResponseEntity updateSurvey(@RequestParam Long id,
                                        @RequestBody UserEntity user){
         try {
-            userService.updateSurvey(id, user);
+            userService.updateUser(id, user);
             return ResponseEntity.ok("Дані користувача були оновлені успішно");
         }catch (UserNotFoundException | EmailAlreadyExistException |
                 NicknameAlreadyExistException exception) {
